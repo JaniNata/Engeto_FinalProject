@@ -1,0 +1,431 @@
+:root{
+    --the-red:rgb(214, 28, 28);
+    --the-black:  #141414;
+    --overlay: rgba(0,0,0,.55);
+    --text: #fff;
+    --btn-size: 56px;               
+    --btn-offset: 28px;  
+}
+
+* { 
+    box-sizing: border-box; 
+}
+
+body { 
+    margin: 0; 
+    background:var(--the-black);
+    color: #fff; 
+    font-family: system-ui, sans-serif; }
+
+img { max-width:100%; height:auto; display:block; }
+
+
+
+            /* INDEX.HTML */
+/* _____________________________________ */
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: var(--the-black);
+  padding: 16px 32px;
+}
+.logo {
+  width: 120px;   
+  height: auto;
+}
+.register-btn {
+  background-color: var(--the-red);
+  color: white;
+  padding: 20px 30px;
+  text-decoration: none;
+  border-radius: 2px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  text-decoration: none;
+}
+.register-btn:hover {
+  background-color: #b61b1b; 
+}
+
+/* HERO SEKCE */
+.hero{
+  position: relative;
+  min-height: 100vh;                
+  display: grid;
+  place-items: center;
+  padding: 80px 24px 96px;         
+  color: var(--text);
+  isolation: isolate;             
+
+  
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("Images/background.jpg") center/cover no-repeat;
+}
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(120% 90% at 50% 10%, rgba(0,0,0,0) 50%, rgba(0,0,0,.55) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,.35) 100%);
+  z-index:-1;                    
+}
+.hero_label{
+ max-width: 42vw;
+  text-align: center;
+  margin-inline: auto;
+}
+.hero h2{
+ font-size: clamp(18px, 2.4vw, 22px);
+  font-weight: 500;
+  color: #ddd;
+  margin: 0 0 22px;
+}
+.hero_hint{
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #d6d6d6;
+}
+/* Formulář v hero */
+.hero_form{
+   display: grid;
+  grid-template-columns: minmax(260px, 480px) auto;  
+  gap: 10px;
+  justify-content: center;
+  
+  margin: 0 auto;
+}
+
+.hero_form input[type="email"]{
+    width: 100%;
+  max-width: 480px;
+  padding: 14px 18px;
+
+  background-color: var(--the-black);           
+  color: #ffffff;                      
+  border: 1px solid #333;              
+  border-radius: 2px;
+  outline: none;
+
+  font-size: 16px;
+  line-height: 1.2;
+}
+.hero_form input::placeholder{ 
+    color:#bbb; 
+    
+}
+.hero_form input::placeholder{ 
+    color:#bdbdbd; 
+    
+}
+.hero_form input:focus{
+  border-color: #a8a8a8;
+  
+  box-shadow: 0 0 0 2px rgba(255,255,255,.12);
+}
+
+/* Tlačítko */
+.btn{
+display:inline-flex; align-items:center; justify-content:center;
+  padding: 0 18px;                        
+  border-radius:2px; 
+  border:0; cursor:pointer;
+  font-weight:700; text-decoration:none;
+  line-height: 46px;    
+  
+}
+.btn_red{
+ background: var(--the-red); 
+ color:#fff;
+transition: background .2s ease;
+}
+.btn_red:hover{ 
+    background: #b61b1b; 
+}
+
+/* Mobil */
+@media (max-width: 640px){
+  .hero{ min-height: 60vh; padding: 64px 16px 72px; }
+  .hero_form{ grid-template-columns: 1fr; }
+  .btn{ line-height: 48px; }
+}
+
+
+/* UP BTN */
+.backtotop{
+  position: fixed;
+  right: var(--btn-offset);
+  bottom: var(--btn-offset);
+  width: var(--btn-size);
+  height: var(--btn-size);
+  border-radius: 50%;
+  background: rgba(0,0,0,.8);                   
+  border: 3px solid var(--the-red);            
+  display: grid;
+  place-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.backtotop img{
+  width: 60%;         
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.4));
+}
+.backtotop.is-visible{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.backtotop:hover,
+.backtotop:focus-visible{
+  background: rgba(0,0,0,.9);
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+
+@media (max-width: 640px){
+  :root{ --btn-size: 48px; --btn-offset: 20px; }
+}
+
+/* MOVIES OVERVIEW */
+.overview{
+  background:#000;
+  padding: 40px 0 32px;
+}
+.overview_inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 24px;
+}
+.overview_row{
+  list-style:none;
+  margin:0 0 18px;
+  padding:0;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap: 28px;
+}
+.overview_row img{
+  width: 260px;             
+  max-width: 32vw;
+  height:auto;
+  border-radius: 2px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.45);
+  display:block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview_cta{ 
+    margin-top: 10px; 
+}
+
+.overview_row img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6); 
+  z-index: 2; 
+}
+
+/* FOOTER */
+.footer{
+  background: var(--the-black);              
+  color: #b3b3b3;                  
+  padding: 40px 24px;              
+}
+
+.footer_inner{
+  max-width: 1100px;               
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 56px;                  
+}
+
+.footer ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;                      
+}
+
+.footer a{
+  color: #b3b3b3;                  
+  text-decoration: underline;    
+  text-underline-offset: 2px;
+}
+
+.footer a:hover,
+.footer a:focus{
+  color: #e6e6e6;                 
+  outline: none;
+}
+
+/* Tablet, mobil */
+@media (max-width: 900px){
+  .footer_inner{ 
+    grid-template-columns: repeat(2, 1fr); 
+}
+}
+@media (max-width: 520px){
+  .footer_inner{ 
+    grid-template-columns: 1fr;
+}
+}
+
+             /* MOOVIES.HTML */
+/* _____________________________________ */
+
+.visually-hidden{
+  position:absolute; 
+  width:1px; 
+  height:1px;
+    overflow:hidden;
+  clip:rect(0 0 0 0);
+   white-space:nowrap;
+clip-path: inset(50%);
+  border:0; 
+  padding:0; 
+  margin:-1px;
+}
+
+.movies{ 
+    background:#000; 
+    color:#fff;
+    padding:24px 0 64px; 
+}
+.movies_inner{ 
+    max-width:1200px; 
+    margin:0 auto; 
+    padding:0 24px; 
+    text-align:center;
+ }
+
+.movies_home{ 
+    display:inline-block; 
+    margin:8px auto 14px; 
+}
+
+.movies_filter{ 
+    display:block; 
+    margin: 0 auto 22px;
+ }
+.movies_filter select{
+  min-width: 190px;
+  padding: 8px 12px;
+  background:#111; 
+  color:#fff;
+  border:1px solid #b33;  
+  border-radius:4px; 
+  outline:none;
+   appearance:none;
+}
+
+.movies_status{ margin: 8px 0 8px; color:#bbb; min-height: 1.2em; }
+
+.movies_grid {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.movies_grid li{ 
+    flex: 0 1 220px;
+ }
+.movies_grid img{
+  width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.45);
+  transform: rotate(6deg);               
+  transition: transform .3s ease, box-shadow .3s ease;
+  cursor: pointer;
+}
+.movies_grid img:hover{
+  transform: rotate(0deg) scale(1.07);   
+  box-shadow: 0 16px 32px rgba(0,0,0,.6);
+  z-index: 2;
+}
+
+@media (max-width: 640px){
+  .movies_grid li{ 
+    flex-basis: 45%;
+ }
+  .movies_grid img{ 
+    
+    width:100%; 
+}
+}
+
+            /* REGISTER.HTML */
+/* _____________________________________ */
+.reg_form {
+  width: min(860px, 92vw);
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background:var(--the-black);
+  padding: 24px;
+}
+
+.reg_form input[type="text"],
+.reg_form input[type="password"] {
+  width: 100%;
+  height: 56px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: 1px solid #bdbdbd;
+  outline: none;
+  padding: 0 16px;
+  font-size: 18px;
+}
+
+.reg_form input::placeholder {
+  color: #cfcfcf;
+}
+
+.reg_form input:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
+}
+
+.reg_form input[type="submit"] {
+  background: #d61c1c;
+  color: #fff;
+  border: none;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reg_form input[type="submit"]:hover {
+  background: #b61b1b;
+}
+
+.reg_form input.is-ok {
+  border-color: #1db954; 
+  box-shadow: 0 0 0 2px rgba(29,185,84,.25);
+}
+.reg_form input.is-error {
+  border-color: #d93025; 
+  box-shadow: 0 0 0 2px rgba(217,48,37,.25);
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>Další filmy</title>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">
+      <img src="Images/netflix-logo.png" alt="Netflix" class="logo">
+    </a>
+    <a href="register.html" class="register-btn">Registrace</a>
+  </nav>
+
+  <main class="movies">
+    <div class="movies_inner">
+
+      <!-- Tlačítko zpět -->
+      <a href="index.html" class="btn btn_red movies_home">Úvodní strana</a>
+
+      <!-- Roletka  -->
+      <label class="movies_filter">
+        <span class="visually-hidden">Vyhledávací téma</span>
+        <select id="topic" aria-label="Vyberte hledané téma">
+          <option value="" selected disabled>Vyberte možnost</option>
+          <option value="girl">Girl</option>
+          <option value="boy">Boy</option>
+          <option value="avengers">Avengers</option>
+          <option value="horror">Horror</option>
+        </select>
+      </label>
+
+      <!-- Výsledky  -->
+      <div id="status" class="movies_status"></div>
+      <ul id="results" class="movies_grid" aria-live="polite"></ul>
+
+    </div>
+  </main>
+
+  <!-- Patička -->
+    <footer class="footer">
+  <div class="footer_inner">
+    <ul>
+      <li><a href="#">Často kladené dotazy</a></li>
+      <li><a href="#">Vztahy s investory</a></li>
+      <li><a href="#">Jak se dívat</a></li>
+      <li><a href="#">Podnikové informace</a></li>
+      <li><a href="#">Právní oznámení</a></li>
+    </ul>
+    <ul>
+      <li><a href="#">Centrum zákaznické podpory</a></li>
+      <li><a href="#">Kariéra</a></li>
+      <li><a href="#">Podmínky používání</a></li>
+      <li><a href="#">Kontaktujte nás</a></li>
+      <li><a href="#">Uvádí jedině Netflix</a></li>
+    </ul>
+    <ul>
+      <li><a href="#">Účet</a></li>
+      <li><a href="#">Uplatněte dárkové poukazy</a></li>
+      <li><a href="#">Soukromí</a></li>
+      <li><a href="#">Test rychlosti</a></li>
+      <li><a href="#">Reklamy</a></li>
+    </ul>
+    <ul>
+      <li><a href="#">Pro média</a></li>
+      <li><a href="#">Koupit dárkové poukazy</a></li>
+      <li><a href="#">Nastavení souborů cookie</a></li>
+      <li><a href="#">Právní záruka</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <script src="movies.js" defer></script>
+</body>
+</html>

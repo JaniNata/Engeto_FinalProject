@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Navigační panel -->
+ <nav>
+    <a href="index.html">
+    <img src="Images/netflix-logo.png" alt="Netflix" class="logo">
+  </a>
+  <a class="register-btn" href="register.html">Registrace</a>
+</nav>
+
+<!-- Hero sekce -->
+    <main class="hero">
+        <div class="hero_label">
+        <h1> Neomezené sledování filmů, TV pořadů a dalšího obsahu</h1>
+        <h2> Již od 239 Kč. Zrušte kdykoli</h2>
+
+        <p class="hero_hint">
+        Jste připraveni se dívat? Pro vytvoření nebo obnovení členství zadejte e-mail.
+        </p>
+
+        <form class="hero_form" action="#">
+            <input type="email" placeholder="E-mailová adresa" required> 
+            <input type="submit" class="btn btn_red" value="Začít">
+        </form>
+        </div>
+    </main>
+    
+<!-- Back to top -->
+    <a href="#top" class="backtotop" id="backToTop" aria-label="Zpět nahoru">
+        <img src="Images/circle-up-regular-full.svg" alt="" />
+    </a>
+
+<!-- Přehled filmů -->
+    <section class="overview">
+    <div class="overview_inner">
+        <ul class="overview_row">
+            <li><img src="Images/avengers.jpg" alt="Avengers: Infinity War"></li>
+            <li><img src="Images/bugs-life.jpeg" alt="A Bug’s Life"></li>
+            <li><img src="Images/thor.jpeg" alt="Thor"></li>
+        </ul>
+
+        <a href="movies.html" class="btn btn_red overview_cta">Najít další filmy</a>
+    </div>
+    </section>
+
+<!-- Patička -->
+    <footer class="footer">
+  <div class="footer_inner">
+    <ul>
+      <li><a href="#">Často kladené dotazy</a></li>
+      <li><a href="#">Vztahy s investory</a></li>
+      <li><a href="#">Jak se dívat</a></li>
+      <li><a href="#">Podnikové informace</a></li>
+      <li><a href="#">Právní oznámení</a></li>
+    </ul>
+    <ul>
+      <li><a href="#">Centrum zákaznické podpory</a></li>
+      <li><a href="#">Kariéra</a></li>
+      <li><a href="#">Podmínky používání</a></li>
+      <li><a href="#">Kontaktujte nás</a></li>
+      <li><a href="#">Uvádí jedině Netflix</a></li>
+    </ul>
+    <ul>
+      <li><a href="#">Účet</a></li>
+      <li><a href="#">Uplatněte dárkové poukazy</a></li>
+      <li><a href="#">Soukromí</a></li>
+      <li><a href="#">Test rychlosti</a></li>
+      <li><a href="#">Reklamy</a></li>
+    </ul>
+    <ul>
+      <li><a href="#">Pro média</a></li>
+      <li><a href="#">Koupit dárkové poukazy</a></li>
+      <li><a href="#">Nastavení souborů cookie</a></li>
+      <li><a href="#">Právní záruka</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+    <script src="script.js" defer></script>
+</body>
+</html>
